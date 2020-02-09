@@ -1,7 +1,7 @@
 'use strict';
 
 const superagent = require('superagent');
-const users = require('../../model/userModel.js');
+const users = require('../../models/userModel.js');
 require('dotenv').config();
 
 /*

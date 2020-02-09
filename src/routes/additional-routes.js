@@ -2,9 +2,10 @@
 
 const express = require('express');
 const router = express.Router();
-const bearerAuth = require('../auth/middleware/bearerAuth.js');
-const acl = require('../auth/middleware/acl-middleware.js');
-const Role = require('../model/userModel.js');
+
+const bearerAuth = require('../middleware/bearerAuth.js');
+const acl = require('../middleware/acl-middleware.js');
+const Role = require('../../models/accessModel.js');
 
 const capabilities = {
   admin: ['create', 'read', 'update', 'delete', 'superuser'],

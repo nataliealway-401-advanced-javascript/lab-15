@@ -3,7 +3,7 @@
 //this file imports schema and creates model
 
 const dataModel = require('./mongo.js');
-const schema = require('./schema/categories-schema.js');
+const schema = require('./categories-schema');
 
 class Categories extends dataModel {
   constructor() { super (schema); }

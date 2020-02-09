@@ -7,7 +7,11 @@
     "doc": "docs"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "lint": "eslint ./*.js",
+    "test": "jest --verbose --coverage",
+    "test-watch": "jest --watchAll --verbose --coverage",
+    "jsdoc": "jsdoc -c ./docs/config/jsdoc.config.json"
   },
   "repository": {
     "type": "git",
@@ -18,5 +22,20 @@
   "bugs": {
     "url": "https://github.com/nataliealway-401-advanced-javascript/lab-15/issues"
   },
-  "homepage": "https://github.com/nataliealway-401-advanced-javascript/lab-15#readme"
+  "homepage": "https://github.com/nataliealway-401-advanced-javascript/lab-15#readme",
+  "dependencies": {
+    "@code-fellows/supergoose": "^1.0.1",
+    "@trevorthompson/mongo-model": "^1.0.2",
+    "base-64": "^0.1.0",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jest": "^25.1.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.8.11",
+    "morgan": "^1.9.1",
+    "nodemon": "^2.0.2",
+    "superagent": "^5.2.1"
+  }
 }
