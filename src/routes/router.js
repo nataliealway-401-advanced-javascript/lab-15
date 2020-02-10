@@ -41,6 +41,7 @@ function getModel(req, res, next){
 
 router.param('model', getModel);
 
+// API Routes
 router.get('/api/v1/:model', bearerAuth, handleGetAll);
 router.post('/api/v1/:model', bearerAuth, acl('create'), handlePost);
 router.get('/api/v1/:model/:id', bearerAuth, handleGetOne);

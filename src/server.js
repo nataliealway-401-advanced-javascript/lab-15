@@ -10,7 +10,7 @@ const errorHandler = require('./middleware/error500.js');
 const notFound = require('./middleware/error404.js');
 const router = require('./routes/router.js');
 const additionalRouter = require('./routes/additional-routes.js');
-const userRoutes = require('./routes/user-routes.js')
+const userRoutes = require('./routes/user-routes.js');
 
 
 // Prepare the express app
