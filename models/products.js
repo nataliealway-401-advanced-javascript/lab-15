@@ -10,4 +10,4 @@ class Products extends dataModel {
 
 }
 
-module.exports = new Products;
+module.exports = Products;
