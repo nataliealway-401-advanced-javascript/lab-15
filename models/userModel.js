@@ -1,13 +1,15 @@
 'use strict';
 
+//Dependencies
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 require('./accessModel.js');
 
-const SECRET = 'sauce';
+const SECRET = 'secrets';
 const persistTokens = new Set();
 
+//User Roles
 const capabilities = {
   admin: ['create', 'read', 'update', 'delete', 'superuser'],
   editor: ['create', 'read', 'update'],
@@ -45,7 +47,7 @@ userSchema.pre('save', join);
 userSchema.pre('find', join);
 
 /**
- *  
+ *  populate and joins user roles
  * @param  next
  */
 function join(next) {
@@ -58,8 +60,9 @@ function join(next) {
 }
 
 /**
+ * Creates a user from oath
  * @params email
- * @return user
+ * @return created user
  */
 userSchema.statics.createFromOauth = function(email) {
   if (!email) {
@@ -83,6 +86,7 @@ userSchema.statics.createFromOauth = function(email) {
 };
 
 /**
+ * Authenticates username and compares data to the DB
  * @param auth
  */
 userSchema.statics.authenticateBasic = function(auth) {
@@ -95,6 +99,7 @@ userSchema.statics.authenticateBasic = function(auth) {
 };
 
 /**
+ * Compares password
  * @params password
  * @return promise
  */
@@ -105,8 +110,9 @@ userSchema.methods.comparePassword = function(password) {
 };
 
 /**
+ * Authenticates token
  * @params token
- * @return promise
+ * @return a promise
  */
 userSchema.statics.authenticateToken = function(token) {
   
@@ -131,6 +137,7 @@ userSchema.statics.authenticateToken = function(token) {
 };
 
 /**
+ * Generates token 
  *  @return token
  */
 userSchema.methods.generateToken = function() {
