@@ -16,6 +16,7 @@ const capabilities = {
   user: ['read'],
 };
 
+
 const userSchema = new mongoose.Schema(
   {
     username: { type: String, required: true, unique: true },
@@ -118,10 +119,9 @@ userSchema.statics.authenticateToken = function(token) {
   
   
   try {
-    console.log('here to auth');
     if (persistTokens.has(token)) {
       
-      return Promise.reject('Token has been used');
+      return Promise.reject('This token has been used');
     }
 
     let parsedTokenObject = jwt.verify(token, SECRET);

@@ -1,6 +1,6 @@
   
 'use strict';
-
+//Credit to David Vloedmen for tests
 process.env.SECRET = 'secrets';
 
 const server = require('../src/server.js').server;
@@ -24,7 +24,7 @@ describe('Auth Router', () => {
       let token;
       let resultsToken;
 
-      xit('Can create user', () => {
+      it('Can create user', () => {
         return mockRequest
           .post('/v1/signup')
           .send(users[userType])
@@ -46,7 +46,7 @@ describe('Auth Router', () => {
           });
       });
 
-      xit('Returns single user', () => {
+      it('Returns single user', () => {
         return mockRequest
           .get('/v1/user')
           .set('Authorization', `Bearer ${resultsToken}`)
@@ -57,13 +57,13 @@ describe('Auth Router', () => {
     });
   });
 
-  xit('returns all users', () => {
+  it('returns all users', () => {
     return mockRequest.get('/v1/users').then(data => {
       expect(data.body.count).toEqual(3);
     });
   });
 
-  xit('Returns invalid login when wrong header', () => {
+  it('Returns invalid login when wrong header', () => {
     return mockRequest
       .post('/v1/signin')
       .auth({ name: 5, password: 6 })
