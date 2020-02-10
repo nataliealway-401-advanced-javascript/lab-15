@@ -9,14 +9,14 @@ const products = new mongoose.Schema({
 });
 
 /**
- * @function 
+ * @function Post - findOne "record"
  */
 products.post('findOne', rec => {
   console.log(`Record found ${rec}`);
 });
 
 /**
- * @function 
+ * @function  Post - Record not found
  */
 products.post('find', () => {
   console.log(`Record not found`);
@@ -24,7 +24,7 @@ products.post('find', () => {
 
 
 /**
- * @function 
+ * @function Post - Save a record
  */
 products.post('save', () => {
   console.log('Record saved');
