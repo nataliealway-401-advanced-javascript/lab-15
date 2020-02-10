@@ -3,12 +3,13 @@
 ### Author: Natalie Alway
 
 ### Links and Resources
-* [submission PR]()
-* [travis]()
+* [submission PR](https://github.com/nataliealway-401-advanced-javascript/lab-15/pull/1)
+* [travis](https://www.travis-ci.com/nataliealway-401-advanced-javascript/lab-15)
+* [heroku](https://lab-15-final-api-server.herokuapp.com/)
 
 
 #### Documentation
-* [jsdoc]() 
+* [jsdoc](https://github.com/nataliealway-401-advanced-javascript/lab-15/tree/lab15/docs) 
 
 
 
